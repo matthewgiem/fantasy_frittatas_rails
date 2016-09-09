@@ -7,7 +7,6 @@ class CommentsController < ApplicationController
 
   def index
     @comments = Comment.all
-    render :index
   end
 
   def create
@@ -23,7 +22,6 @@ class CommentsController < ApplicationController
   def edit
     @user = User.find(params[:user_id])
     @comment = Comment.find(params[:id])
-    render :edit
   end
 
   def update
