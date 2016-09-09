@@ -1,0 +1,11 @@
+<h1>Pick your user (not OAuth yet)</h1>
+
+<ul>
+  <% @user.each do |user| %>
+    <li><%= link_to user.name, user_path(user) %></li>
+  <% end %>
+</ul>
+
+<hr>
+
+<%= link_to "Add an user", new_user_path %>

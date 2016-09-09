@@ -1,0 +1,10 @@
+<h1><%= @user.name %></h1>
+<p><%= @user.name %> the email on file is <%= @user.email %></p>
+<h3>put user details here</h3>
+
+<p><%= link_to "edit", edit_user_path(@user) %> </p>
+<p><%= link_to "delete", user_path(@user),
+                          :data => {:confirm => "You sure?",
+                                    :method => "delete"} %> </p>
+
+<p><%= link_to "return to users", users_path %></p>
