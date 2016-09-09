@@ -1,4 +1,4 @@
-class CommentssController < ApplicationController
+class CommentsController < ApplicationController
 
   def new
     @user = User.find(params[:user_id])

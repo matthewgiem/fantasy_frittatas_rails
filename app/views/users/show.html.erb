@@ -8,3 +8,21 @@
                                     :method => "delete"} %> </p>
 
 <p><%= link_to "return to users", users_path %></p>
+
+<hr>
+<h2>message board</h2>
+<% if @comments.any? %>
+  <ul>
+    <% @comments.each do |comment| %>
+      <li>
+        <%= comment.text %> |
+        <%= comment.user.name %> |
+        <%= comment.created_at %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <h3>no comments yet</h3>
+<% end %>
+
+<p><%= link_to "add comment", new_user_comment_path(@user)%></p>
