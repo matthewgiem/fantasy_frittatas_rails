@@ -1,3 +1,4 @@
+<% content_for(:title, "comment board") %>
 <h1><%= @user.name %></h1>
 <p><%= @user.name %> the email on file is <%= @user.email %></p>
 <h3>put user details here</h3>
@@ -17,7 +18,7 @@
       <li>
         <%= comment.text %> |
         <%= comment.user.name %> |
-        <%= comment.created_at %>
+        <%= time_ago_in_words(comment.created_at) %>
       </li>
     <% end %>
   </ul>
