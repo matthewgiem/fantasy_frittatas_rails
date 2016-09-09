@@ -10,13 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160909150758) do
+ActiveRecord::Schema.define(version: 20160909234239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
+    t.string   "text"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "commentable_id"
+    t.integer  "commentable_type"
+  end
+
+  create_table "posts", force: :cascade do |t|
     t.string   "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -30,3 +38,5 @@ ActiveRecord::Schema.define(version: 20160909150758) do
   end
 
 end
+
+# https://www.codementor.io/ruby-on-rails/tutorial/threaded-comments-polymorphic-associations
